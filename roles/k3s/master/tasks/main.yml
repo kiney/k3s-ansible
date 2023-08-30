@@ -15,6 +15,7 @@
 
 - name: Deploy vip manifest
   include_tasks: vip.yml
+  when: skip_kube_vip is not defined or not skip_kube_vip
 
 - name: Deploy metallb manifest
   include_tasks: metallb.yml
